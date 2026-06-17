@@ -1,777 +1,620 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Kishan Patel is a Backend Developer from Vadodara, India. Expert in ASP.NET Web Forms, React, MySQL, MSSQL. Available for freelance & full-time work." />
-    <meta name="keywords" content="Kishan Patel, Backend Developer, ASP.NET, Web Forms, React, MySQL, MSSQL, Vadodara, India" />
-    <meta name="author" content="Kishan Patel" />
-    <meta property="og:title" content="Kishan Patel — Backend Developer" />
-    <meta property="og:description" content="Backend Developer from Vadodara, India. ASP.NET · React · MySQL · MSSQL" />
-    <meta name="theme-color" content="#0d0d14" />
-    <title>Kishan Patel — Backend Developer | Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
-    <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background: #0d0d14;
-            color: #e8e8f0;
-            line-height: 1.7;
-        }
-
-        /* NAV */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 48px;
-            border-bottom: 0.5px solid rgba(255,255,255,0.08);
-            position: sticky;
-            top: 0;
-            background: rgba(13,13,20,0.95);
-            backdrop-filter: blur(10px);
-            z-index: 999;
-        }
-
-        .nav-logo {
-            font-size: 16px;
-            font-weight: 600;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            list-style: none;
-        }
-
-            .nav-links a {
-                font-size: 13px;
-                color: rgba(232,232,240,0.6);
-                text-decoration: none;
-                transition: color 0.2s;
-            }
-
-                .nav-links a:hover {
-                    color: #fff;
-                }
-
-        .hire-btn {
-            background: #6c63ff;
-            color: #fff;
-            padding: 8px 20px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: background 0.2s;
-            border: none;
-            cursor: pointer;
-        }
-
-            .hire-btn:hover {
-                background: #5a52e0;
-            }
-
-        /* HERO */
-        .hero {
-            padding: 90px 48px 70px;
-            max-width: 980px;
-        }
-
-        .avail-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(108,99,255,0.12);
-            border: 0.5px solid rgba(108,99,255,0.35);
-            border-radius: 20px;
-            padding: 5px 14px;
-            font-size: 12px;
-            color: #a0a0ff;
-            margin-bottom: 28px;
-        }
-
-        .avail-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #6c63ff;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%,100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.3;
-            }
-        }
-
-        .hero h1 {
-            font-size: 54px;
-            font-weight: 600;
-            line-height: 1.12;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .hero-role {
-            font-size: 24px;
-            color: #6c63ff;
-            font-weight: 400;
-            margin-bottom: 16px;
-        }
-
-        .hero-quote {
-            font-size: 14px;
-            color: rgba(232,232,240,0.45);
-            font-style: italic;
-            max-width: 520px;
-            line-height: 1.7;
-            margin-bottom: 32px;
-            border-left: 2px solid rgba(108,99,255,0.4);
-            padding-left: 14px;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 48px;
-        }
-
-        .btn-primary {
-            background: #6c63ff;
-            color: #fff;
-            padding: 12px 26px;
-            border-radius: 7px;
-            font-size: 14px;
-            font-weight: 500;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-            .btn-primary:hover {
-                background: #5a52e0;
-            }
-
-        .btn-outline {
-            background: transparent;
-            color: #e8e8f0;
-            padding: 12px 26px;
-            border-radius: 7px;
-            font-size: 14px;
-            font-weight: 400;
-            border: 0.5px solid rgba(232,232,240,0.25);
-            text-decoration: none;
-            transition: border-color 0.2s;
-        }
-
-            .btn-outline:hover {
-                border-color: rgba(232,232,240,0.55);
-            }
-
-        .stats {
-            display: flex;
-            gap: 48px;
-            padding-top: 32px;
-            border-top: 0.5px solid rgba(255,255,255,0.07);
-        }
-
-        .stat-num {
-            font-size: 30px;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .stat-label {
-            font-size: 12px;
-            color: rgba(232,232,240,0.4);
-            margin-top: 3px;
-        }
-
-        /* SOCIAL STRIP */
-        .social-strip {
-            display: flex;
-            gap: 16px;
-            padding: 16px 48px;
-            border-bottom: 0.5px solid rgba(255,255,255,0.06);
-            flex-wrap: wrap;
-        }
-
-            .social-strip a {
-                display: inline-flex;
-                align-items: center;
-                gap: 6px;
-                font-size: 13px;
-                color: rgba(232,232,240,0.45);
-                text-decoration: none;
-                transition: color 0.2s;
-            }
-
-                .social-strip a:hover {
-                    color: #6c63ff;
-                }
-
-                .social-strip a i {
-                    font-size: 16px;
-                }
-
-        /* SECTIONS */
-        .section {
-            padding: 64px 48px;
-            border-top: 0.5px solid rgba(255,255,255,0.06);
-        }
-
-        .section-tag {
-            font-size: 11px;
-            color: #6c63ff;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .section-title {
-            font-size: 30px;
-            font-weight: 600;
-            color: #fff;
-            margin-bottom: 8px;
-        }
-
-        .section-sub {
-            font-size: 14px;
-            color: rgba(232,232,240,0.45);
-            margin-bottom: 36px;
-            max-width: 520px;
-            line-height: 1.7;
-        }
-
-        /* ABOUT */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 56px;
-            align-items: start;
-        }
-
-        .about-text {
-            font-size: 14px;
-            color: rgba(232,232,240,0.65);
-            line-height: 1.85;
-        }
-
-            .about-text p + p {
-                margin-top: 14px;
-            }
-
-            .about-text strong {
-                color: #e8e8f0;
-                font-weight: 500;
-            }
-
-        /* SKILLS */
-        .skill-group {
-            margin-bottom: 28px;
-        }
-
-        .skill-group-label {
-            font-size: 11px;
-            color: rgba(232,232,240,0.3);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .chip {
-            background: rgba(108,99,255,0.08);
-            border: 0.5px solid rgba(108,99,255,0.25);
-            border-radius: 6px;
-            padding: 6px 14px;
-            font-size: 12px;
-            color: rgba(232,232,240,0.75);
-            transition: border-color 0.2s, background 0.2s;
-        }
-
-            .chip:hover {
-                background: rgba(108,99,255,0.18);
-                border-color: rgba(108,99,255,0.5);
-            }
-
-        /* PROJECTS */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .project-card {
-            background: rgba(255,255,255,0.03);
-            border: 0.5px solid rgba(255,255,255,0.09);
-            border-radius: 12px;
-            padding: 26px;
-            transition: border-color 0.25s, background 0.25s;
-            text-decoration: none;
-            display: block;
-        }
-
-            .project-card:hover {
-                border-color: rgba(108,99,255,0.45);
-                background: rgba(108,99,255,0.05);
-            }
-
-        .project-badge {
-            display: inline-block;
-            background: rgba(108,99,255,0.15);
-            color: #a0a0ff;
-            font-size: 11px;
-            padding: 3px 10px;
-            border-radius: 4px;
-            margin-bottom: 14px;
-        }
-
-        .project-title {
-            font-size: 16px;
-            font-weight: 500;
-            color: #fff;
-            margin-bottom: 6px;
-        }
-
-        .project-url {
-            font-size: 12px;
-            color: rgba(232,232,240,0.3);
-            margin-bottom: 10px;
-        }
-
-        .project-desc {
-            font-size: 13px;
-            color: rgba(232,232,240,0.5);
-            line-height: 1.65;
-            margin-bottom: 16px;
-        }
-
-        .project-tech {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-        }
-
-        .tech-tag {
-            font-size: 11px;
-            color: rgba(232,232,240,0.5);
-            background: rgba(255,255,255,0.05);
-            border-radius: 4px;
-            padding: 2px 8px;
-        }
-
-        .project-link-row {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 12px;
-            color: #6c63ff;
-            margin-top: 14px;
-        }
-
-            .project-link-row i {
-                font-size: 13px;
-            }
-
-        /* CONTACT */
-        .contact-box {
-            background: rgba(108,99,255,0.07);
-            border: 0.5px solid rgba(108,99,255,0.22);
-            border-radius: 16px;
-            padding: 48px;
-            max-width: 600px;
-        }
-
-            .contact-box p {
-                font-size: 14px;
-                color: rgba(232,232,240,0.5);
-                margin-bottom: 28px;
-                line-height: 1.8;
-            }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 14px;
-            color: rgba(232,232,240,0.65);
-            text-decoration: none;
-            padding: 12px 16px;
-            border-radius: 8px;
-            border: 0.5px solid rgba(255,255,255,0.07);
-            background: rgba(255,255,255,0.03);
-            transition: border-color 0.2s, background 0.2s;
-        }
-
-            .contact-link:hover {
-                border-color: rgba(108,99,255,0.4);
-                background: rgba(108,99,255,0.08);
-                color: #fff;
-            }
-
-            .contact-link i {
-                font-size: 18px;
-                color: #6c63ff;
-                min-width: 20px;
-            }
-
-        /* FOOTER */
-        footer {
-            padding: 24px 48px;
-            border-top: 0.5px solid rgba(255,255,255,0.06);
-            text-align: center;
-            font-size: 12px;
-            color: rgba(232,232,240,0.2);
-        }
-
-            footer a {
-                color: #6c63ff;
-                text-decoration: none;
-            }
-
-        /* RESPONSIVE */
-        @media (max-width: 720px) {
-            nav {
-                padding: 14px 20px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                padding: 60px 20px 50px;
-            }
-
-                .hero h1 {
-                    font-size: 36px;
-                }
-
-            .hero-role {
-                font-size: 18px;
-            }
-
-            .stats {
-                gap: 28px;
-                flex-wrap: wrap;
-            }
-
-            .social-strip {
-                padding: 14px 20px;
-            }
-
-            .section {
-                padding: 48px 20px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-box {
-                padding: 28px 20px;
-            }
-
-            footer {
-                padding: 20px;
-            }
-        }
-    </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Kishan Patel — Backend Developer from Vadodara, India. ASP.NET Web Forms, MVC, Core, React, MySQL, MSSQL."/>
+<meta name="author" content="Kishan Patel"/>
+<title>Kishan Patel — Backend Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"/>
+<style>
+:root{
+  --accent:#5b21b6;
+  --accent2:#7c3aed;
+  --accent3:#2563eb;
+  --text:#0f0f0f;
+  --muted:#6b6b6b;
+  --faint:#9a9a9a;
+  --border:#e8e8e8;
+  --border2:#d4d4d4;
+  --bg:#ffffff;
+  --bg2:#f9f9f9;
+  --chip-bg:#f4f1ff;
+  --chip-border:#e0d9ff;
+  --chip-text:#5b21b6;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:#fff;
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:999;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 60px;height:64px;
+  background:rgba(255,255,255,0.95);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+.logo{
+  font-family:'Syne',sans-serif;
+  font-size:17px;font-weight:800;
+  color:var(--text);text-decoration:none;
+  letter-spacing:-0.01em;
+}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{
+  font-size:13.5px;font-weight:500;color:var(--muted);
+  text-decoration:none;transition:color .2s;
+}
+.nav-links a:hover{color:var(--text)}
+.nav-hire{
+  font-size:13px;font-weight:600;
+  color:#fff;background:var(--text);
+  padding:9px 24px;border-radius:6px;
+  text-decoration:none;transition:background .2s;
+  letter-spacing:0.01em;
+}
+.nav-hire:hover{background:var(--accent)}
+
+/* ── FLOAT SOCIAL ── */
+.float-social{
+  position:fixed;right:0;top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:column;z-index:998;
+}
+.float-social a{
+  width:44px;height:44px;background:#fff;
+  border:1px solid var(--border);border-right:none;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:18px;text-decoration:none;transition:all .2s;
+}
+.float-social a:first-child{border-radius:8px 0 0 0}
+.float-social a:last-child{border-radius:0 0 0 8px}
+.float-social a:hover{color:var(--accent);background:var(--chip-bg)}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  justify-content:center;align-items:flex-start;
+  padding:80px 60px 60px;
+  border-bottom:1px solid var(--border);
+  position:relative;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:600;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--accent2);
+  margin-bottom:28px;
+}
+.hero-eyebrow span{
+  width:28px;height:1px;background:var(--accent2);display:inline-block;
+}
+.hero-hi{
+  font-size:clamp(16px,2vw,20px);
+  font-weight:400;color:var(--muted);
+  margin-bottom:8px;
+}
+.hero-name{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(52px,8.5vw,110px);
+  font-weight:800;line-height:0.95;
+  color:var(--text);
+  letter-spacing:-0.04em;
+  margin-bottom:20px;
+}
+.hero-role{
+  font-size:clamp(18px,2.8vw,26px);
+  font-weight:500;color:var(--muted);
+  margin-bottom:8px;
+}
+.hero-location{
+  font-size:14px;color:var(--faint);
+  margin-bottom:40px;
+  display:flex;align-items:center;gap:6px;
+}
+.hero-quote{
+  font-size:15px;color:var(--faint);font-style:italic;
+  max-width:520px;line-height:1.85;
+  border-left:2px solid var(--border2);
+  padding-left:18px;margin-bottom:44px;
+}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:80px}
+.btn-primary{
+  font-size:14px;font-weight:600;
+  color:#fff;background:var(--text);
+  padding:12px 28px;border-radius:6px;
+  text-decoration:none;transition:all .2s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{background:var(--accent)}
+.btn-outline{
+  font-size:14px;font-weight:500;
+  color:var(--text);background:transparent;
+  padding:12px 28px;border-radius:6px;
+  border:1.5px solid var(--border2);
+  text-decoration:none;transition:all .2s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.hero-stats{
+  display:flex;gap:60px;
+  padding-top:40px;border-top:1px solid var(--border);
+}
+.stat-n{
+  font-family:'Syne',sans-serif;
+  font-size:38px;font-weight:800;
+  color:var(--text);letter-spacing:-0.03em;
+}
+.stat-l{
+  font-size:12px;font-weight:500;letter-spacing:0.06em;
+  text-transform:uppercase;color:var(--muted);
+  margin-top:4px;
+}
+
+/* ── SECTION BASE ── */
+.sec{padding:80px 60px;border-top:1px solid var(--border)}
+.sec-label{
+  font-size:11px;font-weight:700;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--accent2);margin-bottom:10px;
+}
+.sec-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(28px,4vw,40px);
+  font-weight:800;color:var(--text);
+  margin-bottom:12px;letter-spacing:-0.025em;
+}
+.sec-sub{font-size:15px;color:var(--muted);margin-bottom:48px;max-width:560px;line-height:1.8}
+
+/* ── ABOUT ── */
+.about-grid{
+  display:grid;grid-template-columns:1fr 1.5fr;
+  gap:60px;align-items:start;
+}
+.about-p{font-size:15px;color:var(--muted);line-height:1.95;margin-bottom:16px}
+.about-p b{color:var(--text);font-weight:600}
+.about-stats-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;margin-bottom:32px}
+.astat{
+  flex:1;min-width:90px;
+  border:1px solid var(--border);border-radius:8px;
+  padding:18px 16px;text-align:center;
+  background:var(--bg2);
+}
+.astat .n{
+  font-family:'Syne',sans-serif;
+  font-size:26px;font-weight:800;color:var(--text);letter-spacing:-0.02em;
+}
+.astat .l{font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+/* skill cards */
+.skc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.skc{border:1px solid var(--border);border-radius:10px;padding:20px;background:#fff;transition:border-color .2s}
+.skc:hover{border-color:var(--border2)}
+.skc-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.skc-icon{
+  width:32px;height:32px;border-radius:7px;
+  background:var(--chip-bg);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--accent2);font-size:16px;flex-shrink:0;
+}
+.skc-title{font-size:11px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{
+  font-size:11.5px;font-weight:500;
+  padding:5px 11px;border-radius:5px;
+  background:var(--chip-bg);color:var(--chip-text);
+  border:1px solid var(--chip-border);
+  white-space:nowrap;
+}
+.chip.b{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe}
+.chip.g{background:#f0fdf4;color:#15803d;border-color:#bbf7d0}
+.chip.o{background:#fffbeb;color:#b45309;border-color:#fde68a}
+.chip.pk{background:#fdf2f8;color:#be185d;border-color:#fbcfe8}
+.chip.c{background:#f0fdfa;color:#0f766e;border-color:#99f6e4}
+
+/* ── SKILLS ── */
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.skill-card{
+  border:1px solid var(--border);border-radius:10px;padding:24px;
+  background:#fff;transition:border-color .2s,box-shadow .2s;
+}
+.skill-card:hover{border-color:var(--border2);box-shadow:0 4px 16px rgba(0,0,0,0.05)}
+.skill-icon{font-size:22px;color:var(--accent2);margin-bottom:14px;display:block}
+.skill-card-title{font-size:13.5px;font-weight:700;color:var(--text);margin-bottom:14px}
+
+/* ── PROJECTS ── */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.proj-card{
+  border:1px solid var(--border);border-radius:12px;padding:28px;
+  background:#fff;text-decoration:none;display:block;
+  transition:border-color .25s,box-shadow .25s,transform .25s;
+  position:relative;overflow:hidden;
+}
+.proj-card:hover{
+  border-color:var(--border2);
+  box-shadow:0 8px 28px rgba(0,0,0,0.07);
+  transform:translateY(-2px);
+}
+.proj-badge{
+  font-size:10.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--accent2);background:var(--chip-bg);
+  padding:3px 10px;border-radius:4px;
+  display:inline-block;margin-bottom:14px;
+}
+.proj-title{font-size:17px;font-weight:700;color:var(--text);margin-bottom:4px}
+.proj-url{font-size:12.5px;color:var(--faint);margin-bottom:12px}
+.proj-desc{font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:18px}
+.proj-tags{display:flex;gap:6px;flex-wrap:wrap}
+.proj-tag{
+  font-size:11.5px;font-weight:500;
+  padding:4px 10px;border-radius:4px;
+  background:var(--bg2);color:var(--muted);
+  border:1px solid var(--border);
+}
+.proj-arrow{
+  position:absolute;top:24px;right:24px;
+  font-size:17px;color:var(--border2);transition:all .25s;
+}
+.proj-card:hover .proj-arrow{color:var(--accent2);transform:translate(2px,-2px)}
+
+/* ── CONTACT ── */
+.contact-outer{
+  display:grid;grid-template-columns:1fr 1.2fr;
+  gap:60px;align-items:center;
+  border:1px solid var(--border);border-radius:12px;
+  padding:56px;background:var(--bg2);
+}
+.contact-left h3{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(22px,3vw,30px);font-weight:800;
+  color:var(--text);margin-bottom:16px;letter-spacing:-0.02em;
+}
+.contact-left p{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:12px}
+.contact-left p b{color:var(--text)}
+.contact-badge{
+  display:inline-flex;align-items:center;gap:7px;margin-top:8px;
+  padding:8px 16px;border-radius:6px;
+  border:1px solid var(--border2);background:#fff;
+  font-size:13px;font-weight:600;color:var(--text);
+}
+.cdot{width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0}
+.contact-right{display:flex;flex-direction:column;gap:10px}
+.clink{
+  display:flex;align-items:center;gap:16px;
+  padding:16px 20px;border-radius:9px;
+  border:1px solid var(--border);background:#fff;
+  text-decoration:none;transition:all .2s;
+}
+.clink:hover{border-color:var(--border2);box-shadow:0 4px 16px rgba(0,0,0,0.06);transform:translateX(4px)}
+.clink-ico{
+  width:40px;height:40px;border-radius:8px;flex-shrink:0;
+  background:var(--chip-bg);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--accent2);font-size:18px;transition:all .2s;
+}
+.clink:hover .clink-ico{background:var(--text);color:#fff}
+.clink-label{font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:2px}
+.clink-val{font-size:13.5px;font-weight:600;color:var(--text)}
+
+/* ── FOOTER ── */
+footer{
+  padding:28px 60px;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:12px;background:#fff;
+}
+.footer-copy{font-size:13px;color:var(--text);font-weight:500}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:13px;color:var(--muted);text-decoration:none;font-weight:500;transition:color .2s}
+.footer-links a:hover{color:var(--text)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .skills-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:900px){
+  nav{padding:0 24px}
+  .nav-links{display:none}
+  .float-social{display:none}
+  .hero{padding:72px 24px 52px;min-height:auto}
+  .hero-stats{gap:32px;flex-wrap:wrap}
+  .sec{padding:56px 24px}
+  .about-grid{grid-template-columns:1fr}
+  .skc-grid{grid-template-columns:1fr 1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .contact-outer{grid-template-columns:1fr;padding:32px 24px;gap:32px}
+  footer{padding:24px;flex-direction:column;align-items:flex-start}
+}
+@media(max-width:600px){
+  .hero-name{font-size:48px}
+  .hero-stats{gap:24px}
+  .skc-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr}
+  .about-stats-row{justify-content:center}
+}
+</style>
+<base target="_blank">
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav>
-        <a href="#hero" class="nav-logo">Kishan Patel</a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <a href="mailto:kishanpatekl190619@gmail.com" class="hire-btn">Hire Me</a>
-    </nav>
+<!-- FLOATING SOCIAL -->
+<div class="float-social">
+  <a href="https://www.linkedin.com/in/kishan-patel-844047319" rel="noopener" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+  <a href="https://wa.me/919714067476" rel="noopener" title="WhatsApp"><i class="ti ti-brand-whatsapp"></i></a>
+  <a href="tel:+919714067476" title="Call"><i class="ti ti-phone"></i></a>
+</div>
 
-    <!-- SOCIAL STRIP -->
-    <div class="social-strip">
-        <a href="https://www.linkedin.com/in/kishan-patel-844047319" target="_blank" rel="noopener">
-            <i class="ti ti-brand-linkedin"></i> LinkedIn
-        </a>
-        <a href="https://github.com/kishann19" target="_blank" rel="noopener">
-            <i class="ti ti-brand-github"></i> GitHub
-        </a>
-        <a href="https://wa.me/919714067476" target="_blank" rel="noopener">
-            <i class="ti ti-brand-whatsapp"></i> WhatsApp
-        </a>
-        <a href="tel:+919714067476">
-            <i class="ti ti-phone"></i> Call
-        </a>
-        <a href="mailto:kishanpatekl190619@gmail.com">
-            <i class="ti ti-mail"></i> Email
-        </a>
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="logo">KP</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:kishanpatekl190619@gmail.com" class="nav-hire">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-eyebrow"><span></span>Backend Developer<span></span></div>
+  <div class="hero-hi">Hi, I'm</div>
+  <div class="hero-name">Kishan<br>Patel</div>
+  <div class="hero-role">Backend Developer &amp; Full-Stack Builder</div>
+  <div class="hero-location"><i class="ti ti-map-pin" style="font-size:14px"></i> Vadodara, Gujarat, India</div>
+  <p class="hero-quote">"Your vision is my command — I believe the client is king, and their satisfaction is my highest priority."</p>
+  <div class="hero-btns">
+    <a href="#projects" class="btn-primary"><i class="ti ti-briefcase"></i> View My Work</a>
+    <a href="mailto:kishanpatekl190619@gmail.com" class="btn-outline"><i class="ti ti-mail"></i> Get In Touch</a>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="stat-n">6+</div>
+      <div class="stat-l">Client Sites</div>
     </div>
+    <div>
+      <div class="stat-n">100%</div>
+      <div class="stat-l">Satisfaction</div>
+    </div>
+    <div>
+      <div class="stat-n">2+</div>
+      <div class="stat-l">Years Exp.</div>
+    </div>
+  </div>
+</section>
 
-    <!-- HERO -->
-    <section class="hero" id="hero">
-        <div class="avail-badge">
-            <span class="avail-dot"></span> Freelance mate available
+<!-- ABOUT -->
+<section class="sec" id="about">
+  <div class="sec-label">Who I Am</div>
+  <div class="sec-title">About Me</div>
+  <div class="about-grid">
+    <div>
+      <p class="about-p">I'm a <b>Backend Developer</b> specialising in <b>ASP.NET Web Forms, ASP.NET MVC, ASP.NET Core, C#, SQL Server, and MySQL</b> — based in Vadodara, Gujarat, India.</p>
+      <p class="about-p">I build dynamic web applications, REST APIs, and database-driven CMS solutions. Equally comfortable on the frontend with <b>React, JavaScript, HTML, and CSS</b> — shipping clean, production-ready code end to end.</p>
+      <p class="about-p">Every project gets my full dedication — from database architecture to polished live deployment. Available for freelance and full-time opportunities.</p>
+      <div class="about-stats-row">
+        <div class="astat"><div class="n">2+</div><div class="l">Years Exp.</div></div>
+        <div class="astat"><div class="n">6+</div><div class="l">Live Projects</div></div>
+        <div class="astat"><div class="n">100%</div><div class="l">Client Sat.</div></div>
+      </div>
+    </div>
+    <div class="skc-grid">
+      <div class="skc">
+        <div class="skc-head"><div class="skc-icon"><i class="ti ti-code"></i></div><div class="skc-title">Languages</div></div>
+        <div class="chips">
+          <span class="chip">C#</span><span class="chip b">SQL</span>
+          <span class="chip g">JavaScript</span><span class="chip o">HTML</span><span class="chip c">CSS</span>
         </div>
-        <h1>Hi, I'm Kishan Patel</h1>
-        <div class="hero-role">Backend Developer</div>
-        <p class="hero-quote">"Your vision is my command — I believe the client is king, and their satisfaction is my highest priority."</p>
-        <div class="hero-btns">
-            <a href="#projects" class="btn-primary">My Work Juo</a>
-            <a href="mailto:kishanpatekl190619@gmail.com" class="btn-outline">Contact Karo</a>
+      </div>
+      <div class="skc">
+        <div class="skc-head"><div class="skc-icon"><i class="ti ti-stack-2"></i></div><div class="skc-title">Frameworks</div></div>
+        <div class="chips">
+          <span class="chip">ASP.NET Web Forms</span>
+          <span class="chip b">ASP.NET MVC</span>
+          <span class="chip g">ASP.NET Core</span>
+          <span class="chip o">React</span>
         </div>
-        <div class="stats">
-            <div>
-                <div class="stat-num">5+</div>
-                <div class="stat-label">Live Projects</div>
-            </div>
-            <div>
-                <div class="stat-num">100%</div>
-                <div class="stat-label">Client Satisfaction</div>
-            </div>
-            <div>
-                <div class="stat-num">2+</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
+      </div>
+      <div class="skc">
+        <div class="skc-head"><div class="skc-icon"><i class="ti ti-database"></i></div><div class="skc-title">Databases</div></div>
+        <div class="chips">
+          <span class="chip">MSSQL / SQL Server</span>
+          <span class="chip b">MySQL</span>
+          <span class="chip g">Stored Procedures</span>
         </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-        <div class="section-tag">About Me</div>
-        <div class="section-title">Hu kone chhu?</div>
-        <div class="about-grid">
-            <div class="about-text">
-                <p>Kishan Patel ek experienced <strong>Backend Developer</strong> chhe — Vadodara, Gujarat, India ma base chhe. <strong>ASP.NET Web Forms, React, MySQL, ane MSSQL</strong> ma nishnat chhe.</p>
-                <p>Scalable, robust backend solutions design ane implement karvama expertise chhe. Dynamic web applications, database design, ane content management systems banavavama maza aave chhe.</p>
-                <p>Freelance ane full-time opportunities mate available chhu. Tamaro project hoy to connect karo!</p>
-            </div>
-            <div>
-                <div class="skill-group">
-                    <div class="skill-group-label">Languages</div>
-                    <div class="chips">
-                        <span class="chip">C#</span>
-                        <span class="chip">SQL</span>
-                        <span class="chip">JavaScript</span>
-                        <span class="chip">HTML</span>
-                        <span class="chip">CSS</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <div class="skill-group-label">Frameworks</div>
-                    <div class="chips">
-                        <span class="chip">ASP.NET Web Forms</span>
-                        <span class="chip">React</span>
-                        <span class="chip">ASP.NET MVC</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <div class="skill-group-label">Databases</div>
-                    <div class="chips">
-                        <span class="chip">MySQL</span>
-                        <span class="chip">MSSQL</span>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="skc">
+        <div class="skc-head"><div class="skc-icon"><i class="ti ti-tools"></i></div><div class="skc-title">Tools</div></div>
+        <div class="chips">
+          <span class="chip o">Git</span><span class="chip c">GitHub</span>
+          <span class="chip pk">Visual Studio</span>
+          <span class="chip">VS Code</span><span class="chip b">Postman</span>
         </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-        <div class="section-tag">Technical Skills</div>
-        <div class="section-title">Hu shu kari shakhu?</div>
-        <p class="section-sub">Backend development, database design, ane full web applications banavavama expertise.</p>
-        <div class="skill-group">
-            <div class="skill-group-label">Backend</div>
-            <div class="chips">
-                <span class="chip">ASP.NET Web Forms</span>
-                <span class="chip">ASP.NET MVC</span>
-                <span class="chip">C# Code-Behind</span>
-                <span class="chip">REST APIs</span>
-                <span class="chip">DAL / BLL Architecture</span>
-                <span class="chip">Master Pages</span>
-            </div>
+      </div>
+      <div class="skc">
+        <div class="skc-head"><div class="skc-icon"><i class="ti ti-bolt"></i></div><div class="skc-title">Technical</div></div>
+        <div class="chips">
+          <span class="chip pk">Backend Dev</span>
+          <span class="chip">REST APIs</span>
+          <span class="chip b">DAL / BLL</span>
+          <span class="chip g">Web Design</span>
         </div>
-        <div class="skill-group" style="margin-top:20px;">
-            <div class="skill-group-label">Frontend</div>
-            <div class="chips">
-                <span class="chip">React</span>
-                <span class="chip">HTML5</span>
-                <span class="chip">CSS3</span>
-                <span class="chip">JavaScript</span>
-                <span class="chip">Bootstrap</span>
-            </div>
+      </div>
+      <div class="skc">
+        <div class="skc-head"><div class="skc-icon"><i class="ti ti-mood-smile"></i></div><div class="skc-title">Soft Skills</div></div>
+        <div class="chips">
+          <span class="chip g">Quick Learner</span>
+          <span class="chip c">Problem Solver</span>
+          <span class="chip o">Active Listener</span>
+          <span class="chip pk">Communication</span>
         </div>
-        <div class="skill-group" style="margin-top:20px;">
-            <div class="skill-group-label">Database</div>
-            <div class="chips">
-                <span class="chip">MySQL</span>
-                <span class="chip">MSSQL / SQL Server</span>
-                <span class="chip">Stored Procedures</span>
-                <span class="chip">Dynamic Queries</span>
-            </div>
-        </div>
-        <div class="skill-group" style="margin-top:20px;">
-            <div class="skill-group-label">Tools</div>
-            <div class="chips">
-                <span class="chip">Git</span>
-                <span class="chip">GitHub</span>
-                <span class="chip">Visual Studio</span>
-                <span class="chip">VS Code</span>
-            </div>
-        </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-        <div class="section-tag">Featured Work</div>
-        <div class="section-title">Live Projects</div>
-        <p class="section-sub">Real client projects jo live chhe ane production ma run thai raha chhe.</p>
-        <div class="projects-grid">
+<!-- SKILLS -->
+<section class="sec" id="skills" style="background:var(--bg2)">
+  <div class="sec-label">What I Do</div>
+  <div class="sec-title">Technical Skills</div>
+  <p class="sec-sub">Backend development, database design, and full-stack applications — built to scale and built to last.</p>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <i class="ti ti-server skill-icon"></i>
+      <div class="skill-card-title">Backend Development</div>
+      <div class="chips">
+        <span class="chip">ASP.NET Web Forms</span>
+        <span class="chip b">ASP.NET MVC</span>
+        <span class="chip g">ASP.NET Core</span>
+        <span class="chip o">C# Code-Behind</span>
+        <span class="chip c">REST APIs</span>
+        <span class="chip pk">DAL / BLL</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <i class="ti ti-layout skill-icon"></i>
+      <div class="skill-card-title">Frontend</div>
+      <div class="chips">
+        <span class="chip">React</span>
+        <span class="chip b">HTML5</span>
+        <span class="chip g">CSS3</span>
+        <span class="chip o">JavaScript</span>
+        <span class="chip c">Bootstrap</span>
+        <span class="chip pk">Tailwind CSS</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <i class="ti ti-database skill-icon"></i>
+      <div class="skill-card-title">Database</div>
+      <div class="chips">
+        <span class="chip">MSSQL / SQL Server</span>
+        <span class="chip b">MySQL</span>
+        <span class="chip g">Stored Procedures</span>
+        <span class="chip o">Dynamic Queries</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <i class="ti ti-tools skill-icon"></i>
+      <div class="skill-card-title">Tools</div>
+      <div class="chips">
+        <span class="chip">Git</span>
+        <span class="chip b">GitHub</span>
+        <span class="chip g">Visual Studio</span>
+        <span class="chip o">VS Code</span>
+        <span class="chip c">Postman</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <a class="project-card" href="https://www.kashaurbrush.com/default.aspx" target="_blank" rel="noopener">
-                <span class="project-badge">Client Project</span>
-                <div class="project-title">Kashaur Brush</div>
-                <div class="project-url">kashaurbrush.com</div>
-                <div class="project-desc">Professional business website — ASP.NET Web Forms satha banavel dynamic ane responsive site.</div>
-                <div class="project-tech">
-                    <span class="tech-tag">ASP.NET Web Forms</span>
-                    <span class="tech-tag">C#</span>
-                    <span class="tech-tag">SQL Server</span>
-                </div>
-                <div class="project-link-row"><i class="ti ti-external-link"></i> Live Site Juo</div>
-            </a>
+<!-- PROJECTS -->
+<section class="sec" id="projects">
+  <div class="sec-label">Featured Work</div>
+  <div class="sec-title">Client Projects</div>
+  <p class="sec-sub">Real projects for real clients — live, production-ready, and fully deployed.</p>
+  <div class="proj-grid">
+    <a class="proj-card" href="https://www.kashaurbrush.com/default.aspx" rel="noopener">
+      <i class="ti ti-external-link proj-arrow"></i>
+      <span class="proj-badge">Client Project</span>
+      <div class="proj-title">Kashaur Brush</div>
+      <div class="proj-url">kashaurbrush.com</div>
+      <div class="proj-desc">Professional business website built with ASP.NET Web Forms — dynamic, responsive, and fully deployed.</div>
+      <div class="proj-tags"><span class="proj-tag">ASP.NET Web Forms</span><span class="proj-tag">C#</span><span class="proj-tag">SQL Server</span></div>
+    </a>
+    <a class="proj-card" href="https://admarkpolycoats.com/" rel="noopener">
+      <i class="ti ti-external-link proj-arrow"></i>
+      <span class="proj-badge">Client Project</span>
+      <div class="proj-title">Admark Polycoats</div>
+      <div class="proj-url">admarkpolycoats.com</div>
+      <div class="proj-desc">Manufacturing company website with dynamic content management, product showcase, and professional design.</div>
+      <div class="proj-tags"><span class="proj-tag">ASP.NET</span><span class="proj-tag">C#</span><span class="proj-tag">MySQL</span></div>
+    </a>
+    <a class="proj-card" href="https://proyantra.com/" rel="noopener">
+      <i class="ti ti-external-link proj-arrow"></i>
+      <span class="proj-badge">Client Project</span>
+      <div class="proj-title">Proyantra</div>
+      <div class="proj-url">proyantra.com</div>
+      <div class="proj-desc">Business web application with robust backend logic and database-driven content management.</div>
+      <div class="proj-tags"><span class="proj-tag">ASP.NET</span><span class="proj-tag">MSSQL</span><span class="proj-tag">JavaScript</span></div>
+    </a>
+    <a class="proj-card" href="https://calculator.chemlocknutrition.com/" rel="noopener">
+      <i class="ti ti-external-link proj-arrow"></i>
+      <span class="proj-badge">Client Project</span>
+      <div class="proj-title">Chemlock Nutrition Calculator</div>
+      <div class="proj-url">calculator.chemlocknutrition.com</div>
+      <div class="proj-desc">Interactive nutrition calculator with complex backend logic powering real-time calculations.</div>
+      <div class="proj-tags"><span class="proj-tag">ASP.NET</span><span class="proj-tag">C#</span><span class="proj-tag">MySQL</span></div>
+    </a>
+    <a class="proj-card" href="https://www.thedialectics.com/" rel="noopener">
+      <i class="ti ti-external-link proj-arrow"></i>
+      <span class="proj-badge">Client Project</span>
+      <div class="proj-title">The Dialectics</div>
+      <div class="proj-url">thedialectics.com</div>
+      <div class="proj-desc">Modern essay platform with Google OAuth, admin panel, React frontend, and ASP.NET Core backend API.</div>
+      <div class="proj-tags"><span class="proj-tag">ASP.NET Core</span><span class="proj-tag">React</span><span class="proj-tag">SQL Server</span></div>
+    </a>
+    <a class="proj-card" href="https://dpsghana.edu.gh/" rel="noopener">
+      <i class="ti ti-external-link proj-arrow"></i>
+      <span class="proj-badge">Client Project</span>
+      <div class="proj-title">DPS International Ghana</div>
+      <div class="proj-url">dpsghana.edu.gh</div>
+      <div class="proj-desc">International school website with dynamic news, activities, circulars, and CMS modules on ASP.NET Web Forms.</div>
+      <div class="proj-tags"><span class="proj-tag">ASP.NET Web Forms</span><span class="proj-tag">C#</span><span class="proj-tag">SQL Server</span></div>
+    </a>
+  </div>
+</section>
 
-            <a class="project-card" href="https://admarkpolycoats.com/" target="_blank" rel="noopener">
-                <span class="project-badge">Client Project</span>
-                <div class="project-title">Admark Polycoats</div>
-                <div class="project-url">admarkpolycoats.com</div>
-                <div class="project-desc">Manufacturing company website — dynamic content ane professional design satha.</div>
-                <div class="project-tech">
-                    <span class="tech-tag">ASP.NET</span>
-                    <span class="tech-tag">C#</span>
-                    <span class="tech-tag">MySQL</span>
-                </div>
-                <div class="project-link-row"><i class="ti ti-external-link"></i> Live Site Juo</div>
-            </a>
+<!-- CONTACT -->
+<section class="sec" id="contact" style="background:var(--bg2)">
+  <div class="sec-label">Get In Touch</div>
+  <div class="sec-title">Contact Me</div>
+  <div class="contact-outer">
+    <div class="contact-left">
+      <h3>Let's build something great together.</h3>
+      <p>Have a project in mind, a full-time role, or just want to connect? I'd love to hear from you.</p>
+      <p><b>Your vision is my mission.</b> I'm fully dedicated to delivering results that exceed expectations — reach out through any channel below.</p>
+      <div class="contact-badge"><span class="cdot"></span> Open for Freelance &amp; Full-Time</div>
+    </div>
+    <div class="contact-right">
+      <a href="mailto:kishanpatekl190619@gmail.com" class="clink">
+        <div class="clink-ico"><i class="ti ti-mail"></i></div>
+        <div><span class="clink-label">Email</span><span class="clink-val">kishanpatekl190619@gmail.com</span></div>
+      </a>
+      <a href="tel:+919714067476" class="clink">
+        <div class="clink-ico"><i class="ti ti-phone"></i></div>
+        <div><span class="clink-label">Phone</span><span class="clink-val">+91 97140 67476</span></div>
+      </a>
+      <a href="https://wa.me/919714067476" rel="noopener" class="clink">
+        <div class="clink-ico"><i class="ti ti-brand-whatsapp"></i></div>
+        <div><span class="clink-label">WhatsApp</span><span class="clink-val">Message me directly</span></div>
+      </a>
+      <a href="https://www.linkedin.com/in/kishan-patel-844047319" rel="noopener" class="clink">
+        <div class="clink-ico"><i class="ti ti-brand-linkedin"></i></div>
+        <div><span class="clink-label">LinkedIn</span><span class="clink-val">Connect with me</span></div>
+      </a>
+    </div>
+  </div>
+</section>
 
-            <a class="project-card" href="https://proyantra.com/" target="_blank" rel="noopener">
-                <span class="project-badge">Client Project</span>
-                <div class="project-title">Proyantra</div>
-                <div class="project-url">proyantra.com</div>
-                <div class="project-desc">Business web application — backend logic ane database driven content management.</div>
-                <div class="project-tech">
-                    <span class="tech-tag">ASP.NET</span>
-                    <span class="tech-tag">MSSQL</span>
-                    <span class="tech-tag">JavaScript</span>
-                </div>
-                <div class="project-link-row"><i class="ti ti-external-link"></i> Live Site Juo</div>
-            </a>
-
-            <a class="project-card" href="https://calculator.chemlocknutrition.com/" target="_blank" rel="noopener">
-                <span class="project-badge">Client Project</span>
-                <div class="project-title">Chemlock Nutrition Calculator</div>
-                <div class="project-url">calculator.chemlocknutrition.com</div>
-                <div class="project-desc">Interactive nutrition calculator — complex backend logic satha real-time calculations.</div>
-                <div class="project-tech">
-                    <span class="tech-tag">ASP.NET</span>
-                    <span class="tech-tag">C#</span>
-                    <span class="tech-tag">MySQL</span>
-                </div>
-                <div class="project-link-row"><i class="ti ti-external-link"></i> Live Site Juo</div>
-            </a>
-
-            <a class="project-card" href="https://www.thedialectics.com/" target="_blank" rel="noopener">
-                <span class="project-badge">Client Project</span>
-                <div class="project-title">The Dialectics</div>
-                <div class="project-url">thedialectics.com</div>
-                <div class="project-desc">Professional website — modern design satha dynamic page content management.</div>
-                <div class="project-tech">
-                    <span class="tech-tag">ASP.NET</span>
-                    <span class="tech-tag">React</span>
-                    <span class="tech-tag">SQL Server</span>
-                </div>
-                <div class="project-link-row"><i class="ti ti-external-link"></i> Live Site Juo</div>
-            </a>
-
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-        <div class="section-tag">Get In Touch</div>
-        <div class="section-title">Contact Karo</div>
-        <p class="section-sub">Freelance project, full-time opportunity, ya simply connect karvanu hoy — tamne message karvo game chhe.</p>
-        <div class="contact-box">
-            <p>Tamari vision = maro mission. Hu tamara project mate dedicated ane available chhu. Niche koi pan ek link par click karo — seedho khulashe!</p>
-            <div class="contact-links">
-                <a href="mailto:kishanpatekl190619@gmail.com" class="contact-link">
-                    <i class="ti ti-mail"></i>
-                    kishanpatekl190619@gmail.com
-                </a>
-                <a href="tel:+919714067476" class="contact-link">
-                    <i class="ti ti-phone"></i>
-                    +91 97140 67476
-                </a>
-                <a href="https://wa.me/919714067476" target="_blank" rel="noopener" class="contact-link">
-                    <i class="ti ti-brand-whatsapp"></i>
-                    WhatsApp par Message Karo
-                </a>
-                <a href="https://www.linkedin.com/in/kishan-patel-844047319" target="_blank" rel="noopener" class="contact-link">
-                    <i class="ti ti-brand-linkedin"></i>
-                    LinkedIn par Connect Karo
-                </a>
-                <a href="https://github.com/kishann19" target="_blank" rel="noopener" class="contact-link">
-                    <i class="ti ti-brand-github"></i>
-                    GitHub — kishann19
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 Kishan Patel · Backend Developer · Vadodara, India · Made with <i class="ti ti-heart" style="color:#6c63ff;font-size:12px;"></i></p>
-    </footer>
+<!-- FOOTER -->
+<footer>
+  <span class="footer-copy">© 2026 Kishan Patel · Backend Developer · Vadodara, India</span>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/kishan-patel-844047319" rel="noopener">LinkedIn</a>
+    <a href="https://wa.me/919714067476" rel="noopener">WhatsApp</a>
+    <a href="mailto:kishanpatekl190619@gmail.com">Email</a>
+  </div>
+</footer>
 
 </body>
 </html>
